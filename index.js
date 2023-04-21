@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.set('views', 'views');
 app.set('view engine', 'ejs');
 app.use(express.static('static'));
-app.use(cookieParser(process.env.SESSION_SECRET))
+app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(view);
 // app.listen(process.env.PORT, () => {
 //     console.log(`Server đang lắng nghe trên cổng ${process.env.PORT}`);
