@@ -1,14 +1,15 @@
 const express = require('express');
-const { send } = require("micro");
 require('dotenv').config();
-const http = require("http");
 const app = express();
-const server = http.createServer(app);
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const view = require('./routers/view');
 const moment = require('moment');
+const { send } = require('micro');
+const microDev = require('micro-dev');
+const microEx = require('micro-ex');
+
 app.locals.moment = moment;
 
 app.use(session({
@@ -25,11 +26,13 @@ app.set('view engine', 'ejs');
 app.use(express.static('static'));
 app.use(cookieParser(process.env.SESSION_SECRET))
 app.use(view);
-// server.listen(process.env.PORT, () => {
+// app.listen(process.env.PORT, () => {
 //     console.log(`Server đang lắng nghe trên cổng ${process.env.PORT}`);
 // });
-module.exports = (req, res) => {
-    app(req, res, (err) => {
-        if (err) return send(res, 500, "Internal Server Error");
-    });
-};
+const handler = microEx(app);
+
+microDev({
+    entry: handler,
+    debug: true,
+    logUrl: true
+});

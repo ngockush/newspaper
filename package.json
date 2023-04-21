@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "micro index.js"
+        "start": "micro-dev"
     },
     "dependencies": {
         "body-parser": "^1.20.2",
@@ -18,5 +18,8 @@
         "mongoose": "^7.0.4",
         "mysql2": "^3.2.3",
         "nodemon": "^2.0.22"
+    },
+    "devDependencies": {
+        "micro-dev": "^3.1.0"
     }
 }
