@@ -1,0 +1,10 @@
+service: Vũ Anh Ngọc
+provider:
+  name: aws
+  runtime: nodejs16.x
+functions:
+  app:
+    handler: handler.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
