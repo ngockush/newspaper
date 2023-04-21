@@ -13,13 +13,9 @@
         "ejs": "^3.1.9",
         "express": "^4.18.2",
         "express-session": "^1.17.3",
-        "micro": "^10.0.1",
         "moment": "^2.29.4",
         "mongoose": "^7.0.4",
         "mysql2": "^3.2.3",
         "nodemon": "^2.0.22"
-    },
-    "devDependencies": {
-        "micro-dev": "^3.1.0"
     }
 }

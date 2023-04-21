@@ -6,8 +6,6 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const view = require('./routers/view');
 const moment = require('moment');
-const { send } = require('micro');
-const microEx = require('micro-ex');
 
 app.locals.moment = moment;
 
@@ -28,4 +26,4 @@ app.use(view);
 // app.listen(process.env.PORT, () => {
 //     console.log(`Server đang lắng nghe trên cổng ${process.env.PORT}`);
 // });
-module.exports = microEx(app);
+module.exports = app;
