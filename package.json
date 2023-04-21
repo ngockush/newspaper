@@ -2,10 +2,9 @@
     "name": "Vũ Anh Ngọc",
     "version": "1.0.0",
     "description": "",
-    "main": "app.js",
+    "main": "index.js",
     "scripts": {
-        "start": "npm run pm2",
-        "pm2": "pm2 start app.js --name ngockush && pm2 logs"
+        "start": "micro index.js"
     },
     "dependencies": {
         "body-parser": "^1.20.2",
@@ -14,10 +13,10 @@
         "ejs": "^3.1.9",
         "express": "^4.18.2",
         "express-session": "^1.17.3",
+        "micro": "^10.0.1",
         "moment": "^2.29.4",
         "mongoose": "^7.0.4",
         "mysql2": "^3.2.3",
-        "nodemon": "^2.0.22",
-        "pm2": "^5.3.0"
+        "nodemon": "^2.0.22"
     }
 }
